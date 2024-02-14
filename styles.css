@@ -1,0 +1,26 @@
+body {
+    background-color: #434343;
+    font-size: 2rem;
+}
+
+.container {
+    background-color: antiquewhite;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+label {
+    margin: 10px;
+}
+
+input {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+}
+
+input[type=text] {
+    width: 75%;
+}
