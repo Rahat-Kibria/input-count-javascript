@@ -5,14 +5,20 @@ window.addEventListener("DOMContentLoaded", function () {
     searchInput.addEventListener("input", function (event) {
         // const inputLength = this.value.length;
         const inputLength = event.target.value.length;
-        if (inputLength > maxInputLength) {
-            event.preventDefault(); //it does not work on input event
-        } else if (inputLength > 50) {
-            this.style.backgroundColor = "#ff8686";
-            inputCount.textContent = (maxInputLength - inputLength) + "/60";
+        const remainingCharacter = maxInputLength - inputLength;
+        if (remainingCharacter === 0) {
+            this.style.backgroundColor = "#fd4848";
+            inputCount.style.color = "#fd4848";
+            inputCount.textContent = remainingCharacter;
+            event.preventDefault();
+        } else if (remainingCharacter <= 10) {
+            this.style.backgroundColor = "#ff9494";
+            inputCount.style.color = "#ff9494";
+            inputCount.textContent = remainingCharacter;
         } else {
             this.style.backgroundColor = "#fff";
-            inputCount.textContent = (maxInputLength - inputLength) + "/60";
+            inputCount.style.color = "#000";
+            inputCount.textContent = remainingCharacter;
         }
     });
 });
